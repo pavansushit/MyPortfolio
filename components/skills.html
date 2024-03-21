@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black; /* Updated background color to black */
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: yellow; /* Adjusted color for section title */
+        }
+
+        .skill-card {
+            background-color: #333; /* Adjusted background color for skill card */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: yellow; /* Adjusted color for skill card title */
+        }
+
+        .skill-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #ccc; /* Adjusted color for skill card description */
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+            vertical-align: middle;
+            color: yellow; /* Adjusted color for skill icon */
+        }
+    </style>
+</head>
+
+<body>
+    <section id="skills" class="py-12">
+        <div class="container mx-auto">
+            <h2 class="section-title">Skills</h2>
+            <div id="skillsGrid" class="grid grid-cols-2 gap-4">
+                <!-- Skills will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const skillsData = {
+                "icons": [
+                    {
+                        "name": "R Programming",
+                        "class": "devicon-r-plain",
+                        "level": "90",
+                        "description": "Experienced in R programming for advanced statistical analysis and data visualization."
+                    },
+                    {
+                        "name": "SAS",
+                        "class": "devicon-sas-plain",
+                        "level": "85",
+                        "description": "Proficient in SAS programming for data analysis, statistical modeling, and clinical trial design."
+                    },
+                    {
+                        "name": "SQL",
+                        "class": "devicon-mysql-plain",
+                        "level": "80",
+                        "description": "Skilled in SQL for database management and querying."
+                    },
+                    {
+                        "name": "Python",
+                        "class": "devicon-python-plain",
+                        "level": "95",
+                        "description": "Proficient in Python programming language for various applications including data analysis, web development, and automation."
+                    },
+                    {
+                        "name": "R Shiny",
+                        "class": "devicon-rshiny-plain",
+                        "level": "85",
+                        "description": "Experienced in developing interactive web applications using R Shiny."
+                    },
+                    {
+                        "name": "Tableau",
+                        "class": "devicon-tableau-plain",
+                        "level": "80",
+                        "description": "Proficient in data visualization using Tableau software."
+                    }
+                ]
+            };
+
+            const skillsGrid = document.getElementById("skillsGrid");
+
+            skillsData.icons.forEach(skill => {
+                const skillHTML = `
+                    <div class="skill-card">
+                        <i class="${skill.class} skill-icon"></i>
+                        <div>
+                            <h3>${skill.name}</h3>
+                            <p>${skill.description}</p>
+                        </div>
+                    </div>
+                `;
+                skillsGrid.insertAdjacentHTML("beforeend", skillHTML);
+            });
+        });
+    </script>
+</body>
+
+</html>
